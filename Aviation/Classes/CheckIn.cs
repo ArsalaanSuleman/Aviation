@@ -19,6 +19,30 @@ namespace Aviation.Classes
             Flight = flight;
         }
 
+        public void CheckBaggage()
+        {
+            if (Luggage.Weight > Luggage.MaximumLuggage)
+            {
+                Console.WriteLine("⚠️ WARNING: Overweight baggage! Additional fees may apply.");
+                Console.Write("Would you like to pay the extra fee? (yes/no): " + "  ");
+                string response = Console.ReadLine()?.ToLower();
+
+                if (response == "yes")
+                {
+                    Console.WriteLine("✅ Extra fee paid. Your baggage is now accepted.");
+                }
+                else
+                {
+                    Console.WriteLine("❌ Check-in denied. Please reduce your baggage weight.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("✅ Baggage is within the weight limit.");
+
+            }
+        }
+
         public void DisplayCheckInDetails()
         {
             Console.WriteLine($"--- CHECK-IN DETAILS ---");

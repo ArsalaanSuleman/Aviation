@@ -26,3 +26,4 @@
 /Users/arsalaansuleman/Documents/Documents - Mac/Læring/Aviation/Aviation/obj/Debug/net9.0/Aviation.pdb
 /Users/arsalaansuleman/Documents/Documents - Mac/Læring/Aviation/Aviation/obj/Debug/net9.0/Aviation.genruntimeconfig.cache
 /Users/arsalaansuleman/Documents/Documents - Mac/Læring/Aviation/Aviation/obj/Debug/net9.0/ref/Aviation.dll
+/Users/arsalaansuleman/Documents/Documents - Mac/Læring/Aviation/Aviation/obj/Debug/net9.0/Aviation.sourcelink.json

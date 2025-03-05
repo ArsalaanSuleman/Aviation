@@ -31,11 +31,19 @@ class Program
             new Passenger("Samuel Adams", 38, 20202020, "New York")
         };
 
-        Luggage luggage = new Luggage(23, 1, 30);
+        Console.Write("Enter luggage weight (kg): ");
+        int luggageWeigth;
+        while (!int.TryParse(Console.ReadLine(), out luggageWeigth))
+        {
+            Console.WriteLine("Invalid input! Please enter a valid number");
+        }
+
+        Luggage luggage = new Luggage(luggageWeigth, 1, 30);
         Flight flight = new Flight("SK1234", DateTime.Now.AddHours(3), DateTime.Now.AddHours(6), "12A");
         CheckIn checkIn = new CheckIn(passengers, luggage, flight);
 
         checkIn.DisplayCheckInDetails();
+        checkIn.CheckBaggage();
 
     }
 }
