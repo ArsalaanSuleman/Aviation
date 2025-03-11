@@ -58,5 +58,23 @@ namespace Aviation.Classes
             }
 
         }
+
+        public void PrintBoardingPass()
+        {
+            Console.WriteLine("\n🎟️ --- BOARDING PASS --- 🎟️");
+            Console.WriteLine($"Flight: {Flight.FlightNumber} to {Flight.Destination}");
+            Console.WriteLine($"Departure: {Flight.Departure}");
+            Console.WriteLine($"Seat: {Flight.Seat}");
+            Console.WriteLine($"Baggage: {Luggage.Pieces} pieces, Total weight: {Luggage.Weight}kg");
+            Console.WriteLine("\nPassengers:");
+
+            foreach (var passenger in Passengers)
+            {
+                Console.WriteLine($"- {passenger.Name}, Age: {passenger.Age}, Passport: {passenger.Passnumber}");
+            }
+
+            Console.WriteLine("\n✅ Please arrive at the gate 30 minutes before departure.");
+            Console.WriteLine("Have a great flight! ✈️");
+        }
     }
 }

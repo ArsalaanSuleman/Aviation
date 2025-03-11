@@ -55,6 +55,7 @@ class Program
         Console.Clear();
         checkIn.DisplayCheckInDetails();
         checkIn.CheckBaggage();
+        checkIn.PrintBoardingPass();
 
     }
 
@@ -71,5 +72,4 @@ class Program
             Console.WriteLine($" Invalid Input! Please enter a number between {min} and {max}.\n");
         }
     }
-
 }
