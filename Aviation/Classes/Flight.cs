@@ -11,13 +11,16 @@ namespace Aviation.Classes
         public DateTime Departure { get; set; }
         public DateTime Arrival { get; set; }
         public string? Seat { get; set; }
+        public string? Destination { get; set; }
 
-        public Flight(string flightNumber, DateTime departure, DateTime arrival, string seat)
+        public Flight(string flightNumber, DateTime departure, DateTime arrival, string seat, string destination)
         {
             FlightNumber = flightNumber;
             Departure = departure;
             Arrival = arrival;
             Seat = seat;
+            Destination = destination;
+
         }
     }
 }

@@ -48,6 +48,7 @@ namespace Aviation.Classes
             Console.WriteLine($"--- CHECK-IN DETAILS ---");
             Console.WriteLine($"Flight: {Flight.FlightNumber} to {Passengers[0].Destination}, Departure: {Flight.Departure}");
             Console.WriteLine($"Baggage: {Luggage.Pieces} pieces, Total weight: {Luggage.Weight}kg");
+            Console.WriteLine($"Destination: {Flight.Destination}");
 
             Console.WriteLine("\nPassengers:");
             foreach (var passenger in Passengers)
