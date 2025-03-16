@@ -11,13 +11,15 @@ class Program
 
         List<Flight> flights = new List<Flight>
         {
-            new Flight("SK1234", DateTime.Now.AddHours(3), DateTime.Now.AddHours(6), "13A", "Paris"),
-            new Flight("DY5678", DateTime.Now.AddHours(3), DateTime.Now.AddHours(6), "14A", "Rome"),
-            new Flight("BA9101", DateTime.Now.AddHours(3), DateTime.Now.AddHours(6), "15A", "London"),
-            new Flight("SK1002", DateTime.Now.AddHours(3), DateTime.Now.AddHours(6), "16A", "Belgium"),
-            new Flight("DY9003", DateTime.Now.AddHours(3), DateTime.Now.AddHours(6), "17A", "New York"),
-            new Flight("BA8800", DateTime.Now.AddHours(3), DateTime.Now.AddHours(6), "18A", "Oslo"),
+            new Flight("SK1234", DateTime.Now.AddHours(3), DateTime.Now.AddHours(6), "13A", "Paris", new List<string> { "12A", "12B", "12C", "13A", "13B" }),
+            new Flight("DY5678", DateTime.Now.AddHours(3), DateTime.Now.AddHours(6), "12B","Rome", new List<string> { "14A", "14B", "14C", "15A", "15B" }),
+            new Flight("BA9101", DateTime.Now.AddHours(3), DateTime.Now.AddHours(6), "15C","London", new List<string> { "16A", "16B", "16C", "17A", "17B" }),
+            new Flight("SK1002", DateTime.Now.AddHours(3), DateTime.Now.AddHours(6), "10A","Belgium", new List<string> { "18A", "18B", "18C", "19A", "19B" }),
+            new Flight("DY9003", DateTime.Now.AddHours(3), DateTime.Now.AddHours(6), "9A","New York", new List<string> { "20A", "20B", "20C", "21A", "21B" }),
+            new Flight("BA8800", DateTime.Now.AddHours(3), DateTime.Now.AddHours(6), "5A","Oslo", new List<string> { "22A", "22B", "22C", "23A", "23B" })
         };
+
+        List<string> availableSeats = new List<string> { };
 
         Console.WriteLine("Available flights:");
         for (int i = 0; i < flights.Count; i++)
@@ -55,6 +57,7 @@ class Program
         Console.Clear();
         checkIn.DisplayCheckInDetails();
         checkIn.CheckBaggage();
+        checkIn.AssignSeats(selectedFlight.AvailableSeats);
         checkIn.PrintBoardingPass();
 
     }

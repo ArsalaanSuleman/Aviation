@@ -12,15 +12,16 @@ namespace Aviation.Classes
         public DateTime Arrival { get; set; }
         public string? Seat { get; set; }
         public string? Destination { get; set; }
+        public List<string> AvailableSeats { get; set; }
 
-        public Flight(string flightNumber, DateTime departure, DateTime arrival, string seat, string destination)
+        public Flight(string flightNumber, DateTime departure, DateTime arrival, string seat, string destination, List<string> availableSeats)
         {
             FlightNumber = flightNumber;
             Departure = departure;
             Arrival = arrival;
             Seat = seat;
             Destination = destination;
-
+            AvailableSeats = availableSeats ?? new List<string>();
         }
     }
 }
