@@ -57,6 +57,13 @@ class Program
         Console.Clear();
         checkIn.DisplayCheckInDetails();
         checkIn.CheckBaggage();
+
+        if (!checkIn.SecurityCheck())
+        {
+            Console.WriteLine("\n❌ Boarding denied due to security check failure.");
+            return;
+        }
+
         checkIn.AssignSeats(selectedFlight.AvailableSeats);
         checkIn.PrintBoardingPass();
 

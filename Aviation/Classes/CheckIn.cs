@@ -21,6 +21,36 @@ namespace Aviation.Classes
             SeatAssignments = new Dictionary<Passenger, string>();
         }
 
+        public bool SecurityCheck()
+        {
+            Random random = new Random();
+
+            foreach (var passenger in Passengers)
+            {
+                Console.WriteLine($"\n🔍 Security check for {passenger.Name}...");
+
+                if (random.Next(1, 11) == 1)
+                {
+                    Console.WriteLine("⚠️ You have been randomly selected for additional security screening.");
+                    Console.Write("What is the purpose of your trip? (business/leisure): ");
+                    string answer = Console.ReadLine()?.ToLower();
+
+                    if (answer != "business" && answer != "leisure")
+                    {
+                        Console.WriteLine("❌ Security check failed! Boarding denied.");
+                        return false;
+                    }
+
+                    Console.WriteLine("✅ Security check passed!");
+                }
+                else
+                {
+                    Console.WriteLine("✅ Security check passed!");
+                }
+            }
+            return true;
+        }
+
         public void AssignSeats(List<string> availableSeats)
         {
             Console.WriteLine("\n✈️ Available seats: " + string.Join(", ", availableSeats));
